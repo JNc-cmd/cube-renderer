@@ -29,8 +29,8 @@ meshd = [
     triangle.triangle([points.points([1,0,1]),points.points([0,0,0]),points.points([1,0,0])]),
 ]
 cube = mesh.mesh(meshd)
-cube.translate(2,0,5)
-cube.rotate(5)
+cube.rotate_z(10)
+cube.translate(0,0,5)
 
 def main():
     pygame.init()
@@ -41,14 +41,13 @@ def main():
     color = (208, 244, 234)
     pygame.display.set_caption("PENUTBUTERJELLYTHELOOOOOOOOOOOOOOONNNNNGGGGGGG WAY")
     run = True
-    i = 5
     while run == True:
         for event in pygame.event.get() :
             if event.type == pygame.QUIT :
                 pygame.quit()
                 run = False
         window.fill(color)
-        cube.rotate(i)
+        cube.everything((0,0,0),(0,10,0),(0,0,0))
         for triangles in meshd:
             p1=triangles.points
             for x in range(0,2):

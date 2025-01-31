@@ -34,11 +34,11 @@ def zrot(rot,matrix):
 def y_rot(rot,matrix):
     yrot_matrix = numpy.matrix([
         [numpy.cos(rot),0,numpy.sin(rot),0],
-        [0,1,0,0],
-        [-numpy.sin(rot),0,numpy.cos(rot),0],
-        [0,0,0,1]
+        [0             ,1,             0,0],
+        [-(numpy.sin(rot)),0,numpy.cos(rot),0],
+        [0             ,0,             0,1]
     ])
-    return numpy.multiply(matrix, yrot_matrix)
+    return numpy.multiply(yrot_matrix,matrix)
 def x_rot(rot,matrix):
     xrot_matrix = numpy.matrix([
         [1,0,0,0],
